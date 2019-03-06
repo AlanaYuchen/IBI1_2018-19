@@ -1,1 +1,5 @@
-
+The practical of using Git and Github went quite well today. I successfully finished all the steps in the guideline with the help of my teachers and friends.
+It is always difficult to start learning new things and it is not the area that I am really interested in. 
+The guideline did not include all the details so sometimes it might be difficult to find certain buttons. It is also difficult to understand the exact meaning of some acdemic words without detailed definition.
+Luckily, my teachers and friends are very nice. They provided me with instructions step by step until I went back to the right track.
+It is difficult to understand the difference between index.md and Readme.md. Only after I delete the index file could I edit the Readme file then. It is really a great dicovery!
