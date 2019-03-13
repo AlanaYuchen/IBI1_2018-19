@@ -22,3 +22,31 @@ if (Z == W):
 else:
     print ("False")
 
+X = True
+Y = False
+Z = (X and not Y) or (Y and not X)
+W = X != Y
+if (Z == W):
+    print ("True")
+else:
+    print ("False")
+    
+X = False
+Y = True
+Z = (X and not Y) or (Y and not X)
+W = X != Y
+if (Z == W):
+    print ("True")
+else:
+    print ("False")
+  
+X = False
+Y = False
+Z = (X and not Y) or (Y and not X)
+W = X != Y
+if (Z == W):
+    print ("True")
+else:
+    print ("False")
+    
+    
