@@ -33,6 +33,7 @@ plt.title ('pie of the four DNA nucleotide')
 plt.axis('equal')
 plt.show()
 
+#use input to write the codes
 L= input ('give me a sequence of DNA:')
 A = 0
 T = 0
@@ -50,7 +51,8 @@ for index in range (len(L)):
 nt = len(L)
 import matplotlib.pyplot as plt
 labels = 'A', 'T', 'G', 'C'
-sizes = [percentA, percentT, percentG, percentC]
+sizes = [A, T, G, C]
+colors = '
 plt.pie(sizes, labels=labels,shadow=False, startangle=90, autopct='%1.1f%%')
 plt.title ('pie of the four DNA nucleotide')
 plt.axis('equal')

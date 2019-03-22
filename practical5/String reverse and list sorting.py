@@ -38,4 +38,11 @@ for letter in range (len(splited_words)):
 splited_words.sort()
 splited_words.reverse()
 print (splited_words)  
-  
+
+#lessen the codes  
+words = input('give me a string of words :' )
+splited_words=words.split (' ')
+for letter in range (len(splited_words)):
+    splited_words[letter] = splited_words[letter][::-1]
+splited_words.sort(reverse=True)
+print (splited_words)  
