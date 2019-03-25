@@ -28,8 +28,8 @@ percentC = C/nt*100
 import matplotlib.pyplot as plt
 labels = 'A', 'T', 'G', 'C'
 sizes = [percentA, percentT, percentG, percentC]
+plt.title('pie of the four DNA nucleotide')
 plt.pie(sizes, labels=labels,shadow=False, startangle=90, autopct='%1.1f%%')
-plt.title ('pie of the four DNA nucleotide')
 plt.axis('equal')
 plt.show()
 
@@ -52,7 +52,6 @@ nt = len(L)
 import matplotlib.pyplot as plt
 labels = 'A', 'T', 'G', 'C'
 sizes = [A, T, G, C]
-colors = '
 plt.pie(sizes, labels=labels,shadow=False, startangle=90, autopct='%1.1f%%')
 plt.title ('pie of the four DNA nucleotide')
 plt.axis('equal')
