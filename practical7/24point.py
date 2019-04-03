@@ -62,7 +62,7 @@ def solve24(num, how, target):
                     for op in ops:
                         new_num = [n for k, n in enumerate(num) if k != i and k != j] + [op(n1, n2)]
                         new_how = [h for k, h in enumerate(how) if k != i and k != j] + [(how[i], ops[op], how[j])]
-                        yield from solve24(new_num, new_how, target) 
+                        yield from solve24(new_num, new_how, target)                      
                         count += 1
     return count
 for nums in l:  
@@ -72,4 +72,7 @@ for nums in l:
         print ('Recursive times:', count)
     except StopIteration:
         print("No solution found")
+        
+        
+
        
