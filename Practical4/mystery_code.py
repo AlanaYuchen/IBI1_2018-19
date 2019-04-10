@@ -23,6 +23,7 @@ while p==False:
     for i in range(2,u+1):
         if n%i == 0:
             p=False
-            #if p=true, it will leave the loop
-    print(n)
-            
+
+
+     
+print(n)
