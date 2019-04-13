@@ -23,8 +23,38 @@ for movie in movies:
     print('Rating: ',rating.childNodes[0].data)
     description = movie.getElementsByTagName('description')[0]
     print('Description: ',description.childNodes[0].data)
+
+common pattern in go_obo.xml
+<term>
+    <id>GO:XXXXXXX</id>
+    <name>xxx</name>
+    <def>
+        <defstr>some_terms</defstr>
+        <is_a>GO:XXXXXXX</is_a>
+        <is_a>GO:XXXXXXX</is_a> #may have multiple parents
+    <def>
+</term>
+
+element
+ <term>
+    <id>GO:0000002</id>
+    <name>mitochondrial genome maintenance</name>
+    <namespace>biological_process</namespace>
+    <def>
+      <defstr>The maintenance of the structure and integrity of the mitochondrial genome; includes replication and segregation of the mitochondrial chromosome.</defstr>
+      <dbxref>
+        <acc>ai</acc>
+        <dbname>GOC</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>vw</acc>
+        <dbname>GOC</dbname>
+      </dbxref>
+    </def>
+    <is_a>GO:0007005</is_a>
+ </term>
 '''
- 
+
 count = 0
 def create_global_variable():
     global count
