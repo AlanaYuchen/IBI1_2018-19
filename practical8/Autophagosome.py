@@ -55,37 +55,44 @@ element
  </term>
 '''
 
-count = 0
-def create_global_variable():
-    global count
-    count = 0
-    return count
-create_global_variable()
 
-from xml.dom.minidom import parse
+
+def child (parent_list, resultset):
+    for parent in parent_list:
+        if parent.childNodes[0].data == ide:
+           resultset.add(geneid) 
+           child (geneid,resultset)
+           
 import xml.dom.minidom
-import panda as pd
+import pandas as pd
 import re
-import numpy as np
+
 dic = {'id':[],'name':[],'definition':[],'childnodes':[]}   
 DOMTree = xml.dom.minidom.parse("go_obo.xml")    
-obo = DOMTree.documentElement 
-autophagosomes = obo.getElementByTagName('defstr')
+c = DOMTree.documentElement 
+autophagosomes = c.getElementsByTagName('defstr')
 for a in autophagosomes:
-    if re.search ('autophagosome',autophagosomes):
-       terms = autophagosomes.parentNode.parentNode
-       ide = terms.getElementByTagName('id')[0].childNodes.data
-       defstr = autophagosomes.data
-       name = terms.getElementByTagName('name')[0].childNodes[0].data
+    auto = a.childNodes[0]
+    if re.search ('autophagosome',auto.data):
+       terms = auto.parentNode.parentNode.parentNode
+       ide = terms.getElementsByTagName('id')[0].childNodes[0].data
+       name = terms.getElementsByTagName('name')[0].childNodes[0].data
+       autod = auto.data
+       parent_list = terms.getElementsByTagName('is_a')
+       geneid = terms.getElementsByTagName('id')[0].childNodes[0].data
+       for parent in parent_list:
+           resultset = set('')
+           child (parent_list, resultset)
+       children = len(resultset)
        dic['id'].append(ide)
        dic['name'].append (name)
-       dic['definition'].append (autophagosomes)
-       for term in terms:
-           parent_list = terms.getElementByTagName('is_a')
-           for parent in parent_list:
-               if parent.childnode[0].data == ide:
-                  count = count + 1
-                  count = count + 
-                   
+       dic['definition'].append (autod)
+       dic['childnodes'].append(children)
+               
+dt = pd.DataFrame(dic)
+dt.to_excel('autophagosome1.xlsx', sheet_name='Sheet1')               
+               
+
+                       
 
        
