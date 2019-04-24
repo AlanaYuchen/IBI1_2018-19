@@ -6,6 +6,7 @@ Created on Wed Apr 17 07:54:32 2019
 @author: Alana
 number1 = re.findall(r'[0-9]+',s)
 """
+#------------------read the txt file with gene names--------------------------
 import re
 dic={}
 H = open('human.txt','r')
@@ -20,24 +21,27 @@ random = re.findall(r'[A-Z][A-Z][A-Z][A-Z]+',r)
 hu = human[0]
 mo = mouse[0]
 ra = random[0]
+
+#----------------calculate the Hamming distance--------------------------------
 edit_distance = 0
-for i in range(0,len(hu)):
+for i in range(0,len(hu)):#compare each amino acid
     if hu[i]!=mo[i]:
-       edit_distance += 1 
+       edit_distance += 1 #add a score 1 if amino acids are
 print (edit_distance)    
       
 edit_distance1 = 0
-for i in range(len(hu)): #compare each amino acid
+for i in range(len(hu)): 
     if hu[i]!=ra[i]:
-       edit_distance1 += 1 #add a score 1 if amino acids are
+       edit_distance1 += 1 
 print (edit_distance1)
        
 edit_distance2 = 0
-for i in range(len(mo)): #compare each amino acid
+for i in range(len(mo)): 
     if ra[i]!=mo[i]:
-       edit_distance2 += 1 #add a score 1 if amino acids are
+       edit_distance2 += 1 
 print (edit_distance2)
 
+#------------------read a txt file of BLOSUM62 into a dictionary---------------
 B = open('BLOSUM62.txt','r')
 b = B.readlines()
 
@@ -61,7 +65,6 @@ for i in range(0,len(hu)):
     else:
         l1 += hu[i]
         count1 += 1
-        print(count1)
     score1 += dic[(hu[i],mo[i])]
 print('Human gene:',hu)
 print('alignment:', l1)
@@ -95,4 +98,28 @@ print('Random gene:',ra)
 print('alignment:', l3)
 print('Mouse gene:',mo)
 print('The BLOSUM score of random and mouse:', score3)
-print('Similarity:', count3/len(hu)*100, '%')       
+print('Similarity:', count3/len(hu)*100, '%')
+
+
+
+
+#----try to define a function---------
+def s (seq1,seq2,count, score):
+    l=''
+    count=0
+    score=0
+    for i in range(0,len(seq1)):
+        if seq1[i]!=seq2[i]:
+            l +='*'
+        else:
+            l+=seq1[1]
+            count += 1
+        score += dic[(seq1[i],seq2[i])]
+    print('sequence1:', seq1)
+    print('alignment:',l)
+    print('sequence2:', seq2)
+    print('The BLOSUM score of seq1 and seq2:', score)
+    print('Similarity:', count/len(seq1)*100, '%') 
+s (mo,ra,count1,score1) 
+s (hu,mo,count2,score2)
+s (hu,ra,count3,score3)   
