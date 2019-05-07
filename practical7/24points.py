@@ -6,15 +6,6 @@ Created on Wed Apr  3 00:22:48 2019
 @author: Alana
 """
 
-count = 1
-
-def create_global_variable():
-    global count
-    count = 0
-    return count
-create_global_variable()
-print (count)
-
 #----------------------input an integer between 1 and 23-----------------------
 
 import re
