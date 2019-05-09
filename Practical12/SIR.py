@@ -37,6 +37,7 @@ for a in range (0,1000):
     I.append(Infected)
     R.append(Recovered)
 #--------------------------------plot------------------------------------------
+plt.figure(figsize=(6,4),dpi=150)
 x = np.linspace(0, 1000, 1001)
 plt.plot(x, S,label = 'Susceptible')    
 plt.plot(x, I,label = 'Infected') 
@@ -45,7 +46,5 @@ plt.xlabel('times')
 plt.ylabel('number of people')
 plt.title('SIR model')
 plt.legend()
-plt.show()
-plt.figure(figsize=(6,4),dpi=150)
 plt.savefig("SIR model",type="png")
 

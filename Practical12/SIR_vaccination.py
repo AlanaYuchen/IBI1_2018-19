@@ -40,7 +40,7 @@ for v in vac:
         I.append(Infected)
     infection.append(I)
 #-----------------------plot---------------------------------------------------
-
+plt.figure(figsize=(6,4),dpi=150)
 x = np.linspace(0, 1000, 1001)
 for i in range(0,len(infection)):
     plt.plot(x, infection[i],label = str(i*10)+'%')    
@@ -48,7 +48,5 @@ plt.xlabel('times')
 plt.ylabel('number of people')
 plt.title('SIR model with different vaccination rates')
 plt.legend()
-plt.show()
-plt.figure(figsize=(6,4),dpi=150)
 plt.savefig("SIR model with different vaccination rates",type="png")
 
