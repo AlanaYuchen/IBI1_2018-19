@@ -1,0 +1,8 @@
+This practical is of suitable difficulty. It is more interesting than previous practical because its out come is really cool. It helps to us simulate and consolidate the knowledge we learned from Global Challenge (though it is more simple). 
+
+Important skills learned from this practical:
+1. Learn to define a list of arithmetic progression, functioning as the x axis in plotting. E. g. x = np.linspace(0, 1000, 1001)
+2. plt.figure(figsize=(6,4),dpi=150) should be put in front of the code for plotting.
+3. Try can be used in spatial_SIR task to avoid 'index out of range'. However, if cannot avoid errors caused by minus numbers. Thus, we have to limited the indexes >= 0.
+4. Be careful about wusing indexes while writing piles of loops.
+5. Tuples with the same format can be added （e.g. coordinates for each human）

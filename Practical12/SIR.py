@@ -15,7 +15,7 @@ beta = 0.3
 gamma = 0.05
 S = []
 I = []
-R = []
+R = []#arrays used to store the changes of susceptible/infected/recovered people.
 S.append(Susceptible)
 I.append(Infected)
 R.append(Recovered)
@@ -38,7 +38,7 @@ for a in range (0,1000):
     R.append(Recovered)
 #--------------------------------plot------------------------------------------
 plt.figure(figsize=(6,4),dpi=150)
-x = np.linspace(0, 1000, 1001)
+x = np.linspace(0, 1000, 1001)#define a list of a arithmetic progression for the x axis
 plt.plot(x, S,label = 'Susceptible')    
 plt.plot(x, I,label = 'Infected') 
 plt.plot(x, R,label = 'Recovered')     
