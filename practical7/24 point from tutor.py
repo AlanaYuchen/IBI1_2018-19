@@ -10,7 +10,7 @@ from fractions import Fraction
 t=0
 numbers = input ("Please input numbers to computer 24(use ',' to divide them):\n")
 l = re.split(',',numbers)
-l = list(map(eval, l))
+l = list(map(eval, l))# turn the numbers into a list
 for i in l:
     if i%1!=0 or i<1 or i>23:
        print('The input number must be integers from 1 to 23')

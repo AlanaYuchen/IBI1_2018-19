@@ -1,0 +1,10 @@
+Feedback: 
+
+Week 3:
+
+- [ ] On https://alanayuchen.github.io/ the text is the same as in the style template. Change it to make it specific to yourself.
+
+
+Response: 
+
+Added self introduction in Readme.md in the AlanaYuchen.github.io repository to change the content of my own website.

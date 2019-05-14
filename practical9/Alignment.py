@@ -6,7 +6,7 @@ Created on Wed Apr 17 07:54:32 2019
 @author: Alana
 number1 = re.findall(r'[0-9]+',s)
 """
-#------------------read the txt file with gene names--------------------------
+#------------------read the txt file with gene names---------------------------
 import re
 dic={}
 H = open('human.txt','r')
@@ -103,7 +103,7 @@ print('Similarity:', count3/len(hu)*100, '%')
 
 
 
-#----try to define a function---------
+#-----------------------try to define a function-------------------------------
 def s (seq1,seq2,count, score):
     l=''
     count=0

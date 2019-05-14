@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Apr 10 09:04:26 2019
-
+Special thank to Jeff who have done debug at midnight ! OvO
 @author: Alana
 """
 '''
@@ -57,20 +57,22 @@ element
 
 
 
-def child (parent_list, resultset):
+def child (x,resultset): 
     for parent in parent_list:
-        if parent.childNodes[0].data == ide:
-           resultset.add(geneid) 
+        if parent.childNodes[0].data == x:
+           geneid=parent.parentNode.getElementsByTagName('id')[0].childNodes[0].data
+           resultset.add(geneid)
            child (geneid,resultset)
            
 import xml.dom.minidom
 import pandas as pd
 import re
 
-dic = {'id':[],'name':[],'definition':[],'childnodes':[]}   
-DOMTree = xml.dom.minidom.parse("go_obo.xml")    
-c = DOMTree.documentElement 
-autophagosomes = c.getElementsByTagName('defstr')
+dic = {'id':[],'name':[],'definition':[],'childnodes':[]} # use dictionary to store the information for each term found  
+DOMTree = xml.dom.minidom.parse("go_obo.xml")  # parse the XML file into a DOM document object  
+c = DOMTree.documentElement                     # get the root element of the document
+autophagosomes = c.getElementsByTagName('defstr')  # a list of defstr element
+parent_list = c.getElementsByTagName('is_a')
 for a in autophagosomes:
     auto = a.childNodes[0]
     if re.search ('autophagosome',auto.data):
@@ -78,11 +80,9 @@ for a in autophagosomes:
        ide = terms.getElementsByTagName('id')[0].childNodes[0].data
        name = terms.getElementsByTagName('name')[0].childNodes[0].data
        autod = auto.data
-       parent_list = terms.getElementsByTagName('is_a')
        geneid = terms.getElementsByTagName('id')[0].childNodes[0].data
-       for parent in parent_list:
-           resultset = set('')
-           child (parent_list, resultset)
+       resultset = set('')
+       child(ide,resultset)
        children = len(resultset)
        dic['id'].append(ide)
        dic['name'].append (name)
@@ -90,9 +90,12 @@ for a in autophagosomes:
        dic['childnodes'].append(children)
                
 dt = pd.DataFrame(dic)
-dt.to_excel('autophagosome1.xlsx', sheet_name='Sheet1')               
+dt.to_excel('autophagosome.xlsx', sheet_name='Sheet1')               
                
 
                        
 
-       
+  
+
+
+     

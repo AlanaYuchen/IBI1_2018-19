@@ -1,2 +1,11 @@
-1. Read a BLOSUM62 txt file in to a dictionary is quite difficult. Use filename.readlines()can read the txt file into a list containing each line as a string. Uses the index to search the characters you want. Make sure there are no blank lines left in the txt file.
+Findings: 
+
+Human and mouse protein sequence are quite similar because they get high BLOSUM score.
+
+The random sequence has the same BLOSUM62 score with human and mouse sequence respectively.
+
+
+Reflection:
+
+1. Read a BLOSUM62 txt file in to a dictionary is quite difficult. Use filename. readlines()can read the txt file into a list containing each line as a string. Uses the index to search the characters you want. Make sure there are no blank lines left in the txt file.
 2. Some further improvement: develop a more user friendly interface like using 'input' or write more comments about the codes.

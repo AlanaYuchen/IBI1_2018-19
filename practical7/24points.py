@@ -20,7 +20,6 @@ for i in l:
        t=t+1
        break
     elif t==len(l)-1:
-        print ('Yes')
         break
     else:
         t=t+1
@@ -43,16 +42,19 @@ count = 0
 def solve24(num, how, target):
     global count
     if len(num) == 1:
-        if round(num[0], 5) == round(target, 5):
+        if round(num[0], 5) == round(target, 5): 
+            #The method round() returns x rounded to n digits from the decimal point. #match sucsessfully
             yield str(how[0]).replace(',', '').replace("'", '')
             count += 1
     else:
         for i, n1 in enumerate(num):
             for j, n2 in enumerate(num):
-                if i != j:
+                if i != j:#not the number in the same position extracted
                     for op in ops:
                         new_num = [n for k, n in enumerate(num) if k != i and k != j] + [op(n1, n2)]
+                        #create a new list with the original numbers left and the mutated number.
                         new_how = [h for k, h in enumerate(how) if k != i and k != j] + [(how[i], ops[op], how[j])]
+                        #store the other numbers and current calculation
                         yield from solve24(new_num, new_how, target) 
                         count += 1
     return count
@@ -63,4 +65,9 @@ for nums in l:
         print ('Recursive times:', count)
     except StopIteration:
         print("No solution found")
-       
+        print (count)
+'''
+The next() returns the next item from the iterator.
+If the iterator is exhausted, it returns default value (if provided).
+If the default parameter is omitted and iterator is exhausted, it raises StopIteration.
+'''       

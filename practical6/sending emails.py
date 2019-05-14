@@ -30,7 +30,7 @@ for line in email:
            subjects += [lines[2]]
            emails +=[lines[1]]
            
-#-------------------------sending the email---------------------------------           
+#-------------------------sending the email------------------------------------           
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
@@ -66,12 +66,10 @@ for i in range(0, len(namelist)):
 email.close()
 text.close()
 
-# for a lot of trial the errors always show that the email address cannot log in. 
-# Sometimes after trying to send too many emails through a server, the account might be locked.
-#pay attention to the whitepace while writing loops!
-#adding 'print'function is a good method when debugging.
-      
+'''
+ for a lot of trial the errors always show that the email address cannot log in. 
+ Sometimes after trying to send too many emails through a server, the account might be locked.
+ Pay attention to the whitepace while writing loops!
+ Adding 'print'function is a good method when debugging.
+'''      
                
-   
-    
-

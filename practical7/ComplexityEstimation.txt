@@ -1,1 +1,4 @@
+The complexity of the algorithm I used is n!4^(n-1).
+
+
 A variable (count) is set to record the recursion times.Count += 1 after each trial until the solution is found.
