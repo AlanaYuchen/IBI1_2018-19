@@ -1,0 +1,4 @@
+How to run COPASI on command line
+Navigate to practical13 folder
+Call CopasiSE predator-prey.cps
+yuchenMacBook-Pro:Practical13 chenghui$ /Applications/COPASI/CopasiSE predator-prey.cps

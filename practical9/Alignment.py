@@ -70,6 +70,7 @@ print('Human gene:',hu)
 print('alignment:', l1)
 print('Mouse gene:',mo)
 print('The BLOSUM score of human and mouse:', score1)           
+print('Normalized BLOSUM score:',score1/len(hu))
 print('Similarity:', count1/len(hu)*100, '%')
 
 score2 = 0
@@ -84,6 +85,7 @@ print('Human gene:',hu)
 print('alignment:', l2)
 print('Random gene:',ra)
 print('The BLOSUM score of human and random:', score2)  
+print('Normalized BLOSUM score:',score2/len(hu))
 print('Similarity:', count2/len(hu)*100, '%')
 
 score3 = 0
@@ -98,12 +100,12 @@ print('Random gene:',ra)
 print('alignment:', l3)
 print('Mouse gene:',mo)
 print('The BLOSUM score of random and mouse:', score3)
+print('Normalized BLOSUM score:',score3/len(mo))
 print('Similarity:', count3/len(hu)*100, '%')
 
 
 
-
-#-----------------------try to define a function-------------------------------
+#========================try to define a function==============================
 def s (seq1,seq2,count, score):
     l=''
     count=0
@@ -119,7 +121,9 @@ def s (seq1,seq2,count, score):
     print('alignment:',l)
     print('sequence2:', seq2)
     print('The BLOSUM score of seq1 and seq2:', score)
+    print('Normalized BLOSUM score:',score/len(seq1))
     print('Similarity:', count/len(seq1)*100, '%') 
+
 s (mo,ra,count1,score1) 
 s (hu,mo,count2,score2)
 s (hu,ra,count3,score3)   

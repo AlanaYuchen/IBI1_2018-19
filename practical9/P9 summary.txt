@@ -1,6 +1,18 @@
 Findings: 
 
-Human and mouse protein sequence are quite similar because they get high BLOSUM score.
+Human~mouse
+BLOSUM62 score: 1091
+Normalized BLOSUM62 score: 4.914
+
+Human~random
+BLOSUM62 score: -250
+Normalized BLOSUM62 score: -1.126
+
+Mouse~random
+BLOSUM62 score: -250
+Normalized BLOSUM62 score: -1.126
+
+Human and mouse SOD2 protein sequence are quite similar because they get high BLOSUM62 score.
 
 The random sequence has the same BLOSUM62 score with human and mouse sequence respectively.
 

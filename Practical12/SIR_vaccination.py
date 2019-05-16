@@ -44,7 +44,7 @@ plt.figure(figsize=(6,4),dpi=150)
 x = np.linspace(0, 1000, 1001)
 for i in range(0,len(infection)):
     plt.plot(x, infection[i],label = str(i*10)+'%')    
-plt.xlabel('times')
+plt.xlabel('time')
 plt.ylabel('number of people')
 plt.title('SIR model with different vaccination rates')
 plt.legend()

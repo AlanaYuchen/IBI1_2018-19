@@ -50,7 +50,7 @@ for i in range(0, len(namelist)):
     correct_message = re.sub(r'User',namelist[i],lines)
     message = MIMEText(correct_message, 'plain','utf-8')          
     message['From'] = Header(user,'utf-8') 
-    message['To'] = Header(subjects[i],'ascii') # it went wrong if using 'utf-8' here for information interchange.
+    message['To'] = Header(emails[i],'ascii') # it went wrong if using 'utf-8' here for information interchange.
     subject = subjects[i]                       #askii: American Standard Code for Information Interchange
     message['Subject'] = Header(subject, 'utf-8')
     

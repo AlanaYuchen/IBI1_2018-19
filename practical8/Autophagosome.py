@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Apr 10 09:04:26 2019
-Special thank to Jeff who have done debug at midnight ! OvO
+
 @author: Alana
 """
 '''
@@ -24,17 +24,6 @@ for movie in movies:
     description = movie.getElementsByTagName('description')[0]
     print('Description: ',description.childNodes[0].data)
 
-common pattern in go_obo.xml
-<term>
-    <id>GO:XXXXXXX</id>
-    <name>xxx</name>
-    <def>
-        <defstr>some_terms</defstr>
-        <is_a>GO:XXXXXXX</is_a>
-        <is_a>GO:XXXXXXX</is_a> #may have multiple parents
-    <def>
-</term>
-
 element
  <term>
     <id>GO:0000002</id>
@@ -54,7 +43,6 @@ element
     <is_a>GO:0007005</is_a>
  </term>
 '''
-
 
 
 def child (x,resultset): 

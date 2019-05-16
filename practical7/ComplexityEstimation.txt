@@ -1,4 +1,9 @@
-The complexity of the algorithm I used is n!4^(n-1).
+The complexity of the algorithm I used is n!.
+I use two for loops (one within another).
+Each for loop will be carried out n, n-1, n-2... times
 
 
 A variable (count) is set to record the recursion times.Count += 1 after each trial until the solution is found.
+
+The calculation of recursion times is a bit different from complexity.
+Approximately to : n!(n-1)!4^(n-1)
