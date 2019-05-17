@@ -35,14 +35,15 @@ create a plot after each excution
 '''
 
 dic={0:(-1,-1),1:(-1,0),2:(-1,1),3:(0,1),4:(1,1),5:(1,0),6:(1,-1),7:(0,-1)}
-for a in range(0,100):
+
+for a in range(0,100): # try to recover
     I = np.where(population==1)
     for i in range(0,len(I[0])):
         recover = np.random.choice(range(2),1,p = [1-gamma,gamma])
         if recover == 1:
            population[I[0][i],I[1][i]]=0.5
            
-    inf = np.where(population==1)
+    inf = np.where(population==1) #try to infect
     for j in range(0,len(inf[0])):
         infected = np.random.choice(range(2),8,p=[1-beta,beta])
         for m in range(0,len(infected)):
