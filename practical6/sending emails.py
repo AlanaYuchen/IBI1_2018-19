@@ -29,7 +29,7 @@ for line in email:
            namelist += [lines[0]]
            subjects += [lines[2]]
            emails +=[lines[1]]
-           
+email.close()           
 #-------------------------sending the email------------------------------------           
 import smtplib
 from email.mime.text import MIMEText
@@ -63,7 +63,6 @@ for i in range(0, len(namelist)):
     except smtplib.SMTPException:
         print ('Mail did not send successfully')
         
-email.close()
 text.close()
 
 '''

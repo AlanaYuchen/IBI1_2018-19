@@ -30,31 +30,31 @@ l = [l]
 
 from operator import mul, sub, add
 
-
+# test if the dividend is zero
 def div(a, b):
     if b == 0:
         return 999999.0
     return a / b
 
 
-ops = {mul: '*', div: '/', sub: '-', add: '+'}
+ops = {mul: '*', div: '/', sub: '-', add: '+'} # store operations
 count = 0
 def solve24(num, how, target):
     global count
     if len(num) == 1:
-        if round(num[0], 5) == round(target, 5): 
+        if round(num[0], 5) == round(target, 5):
             #The method round() returns x rounded to n digits from the decimal point. #match sucsessfully
             yield str(how[0]).replace(',', '').replace("'", '')
             count += 1
     else:
         for i, n1 in enumerate(num):
-            for j, n2 in enumerate(num):
+            for j, n2 in enumerate(num): # select two numbers
                 if i != j:#not the number in the same position extracted
-                    for op in ops:
-                        new_num = [n for k, n in enumerate(num) if k != i and k != j] + [op(n1, n2)]
+                    for op in ops: # conbine numbers with all arithmetec combination
                         #create a new list with the original numbers left and the mutated number.
+                        new_num = [n for k, n in enumerate(num) if k != i and k != j] + [op(n1, n2)]
+                        #store the other numbers and current calculation in a list.
                         new_how = [h for k, h in enumerate(how) if k != i and k != j] + [(how[i], ops[op], how[j])]
-                        #store the other numbers and current calculation
                         yield from solve24(new_num, new_how, target) 
                         count += 1
     return count

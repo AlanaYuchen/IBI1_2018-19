@@ -2,14 +2,17 @@ Findings:
 
 Human~mouse
 BLOSUM62 score: 1091
+Identity: 89.64%
 Normalized BLOSUM62 score: 4.914
 
 Human~random
 BLOSUM62 score: -250
+Identity: 5.41%
 Normalized BLOSUM62 score: -1.126
 
 Mouse~random
 BLOSUM62 score: -250
+Identity: 5.86%
 Normalized BLOSUM62 score: -1.126
 
 Human and mouse SOD2 protein sequence are quite similar because they get high BLOSUM62 score.
